@@ -1,0 +1,34 @@
+{
+  "name": "ngx-signal-experimental",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/ngx-signal-experimental/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/ngx-signal-experimental",
+        "main": "packages/ngx-signal-experimental/src/index.ts",
+        "tsConfig": "packages/ngx-signal-experimental/tsconfig.lib.json",
+        "assets": ["packages/ngx-signal-experimental/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/ngx-signal-experimental/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/ngx-signal-experimental"],
+      "options": {
+        "jestConfig": "packages/ngx-signal-experimental/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
